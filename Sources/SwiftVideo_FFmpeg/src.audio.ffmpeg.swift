@@ -59,8 +59,8 @@ public class FFmpegAudioSRC: Tx<AudioSample, AudioSample> {
                                    sampleCount: sample.numberSamples(),
                                    sampleFormat: avSampleFormat(sample.format()))
         let srcSampleCount = Int64(swrCtx.getDelay(srcSampleRate) + sample.numberSamples())
-        let dstMaxSampleCount = Int(AVMath.rescale(Int64(sample.numberSamples()), dstSampleRate, srcSampleRate, .up))
-        let dstSampleCount = Int(AVMath.rescale(srcSampleCount, dstSampleRate, srcSampleRate, .up))
+        let dstMaxSampleCount = Int(AVMath.rescale(Int64(sample.numberSamples()), dstSampleRate, srcSampleRate, rounding: .up))
+        let dstSampleCount = Int(AVMath.rescale(srcSampleCount, dstSampleRate, srcSampleRate, rounding: .up))
         let dstSamples: AVSamples = {
             if dstSampleCount <= dstMaxSampleCount {
                 return AVSamples(channelCount: outChannelCount,

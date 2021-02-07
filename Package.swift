@@ -63,7 +63,7 @@ let package = Package(
         .package(name: "SwiftProtobuf", url: "https://github.com/apple/swift-protobuf.git", from: "1.7.0"),
         .package(url: "https://github.com/apple/swift-nio-ssl.git", from: "2.4.3"),
         .package(url: "https://github.com/apple/swift-log.git", from: "1.1.1"),
-        .package(url: "https://github.com/sunlubo/SwiftFFmpeg", .revision("22b886fd5242c1923f0993c9541768a9a16e33f2"))
+        .package(url: "https://github.com/sunlubo/SwiftFFmpeg", .branch("master"))
     ],
     targets: [
         .systemLibrary(
